@@ -8,10 +8,10 @@ RF24 radio(RF24_CHIP_ENABLE_PIN, RF24_CHIP_SELECT_PIN);
 
 byte address[][6] = {"1Node", "2Node", "3Node", "4Node", "5Node", "6Node"}; // возможные номера труб
 
-int LEFT_VERTICAL_SLIDER_PIN = 2; // потенциометр на 2 аналоговом пине, вперед-назад  (мотор)
-// int LEFT_HORIZONTAL_SLIDER_PIN = 3; // левый потенциометр на 2 аналоговом пине, вправо-влево  (элероны)
+int LEFT_VERTICAL_SLIDER_PIN = 2; // левый потенциометр на 2 аналоговом пине, вперед-назад  (мотор)
+// int LEFT_HORIZONTAL_SLIDER_PIN = 3; // левый потенциометр на 3 аналоговом пине, вправо-влево  (элероны)
 int RIGHT_VERTICAL_SLIDER_PIN = 1;  // правый потенциометр на 1 аналоговом пине, вперед-назад  (руль высоты)
-int RIGHT_HORIZONTAL_SLIDER_PIN = 8; // левый потенциометр на 2 аналоговом пине, вправо-влево  (элероны)
+int RIGHT_HORIZONTAL_SLIDER_PIN = 8; // правый потенциометр на 8 аналоговом пине, вправо-влево  (элероны)
 
 int SERVO_MIN_ANGLE = 0;
 int SERVO_MAX_ANGLE = 180;
@@ -49,8 +49,6 @@ int readAnalogPin(int pinNumber, long toLow, long toHigh, bool isInvert)
 
 /**
   * Прочитать значения пульта управления
-  *
-  * @return массив с текущими значениями снятыми с пульта управления
   */
 void readControlPanelValues()
 {
@@ -69,8 +67,6 @@ void readControlPanelValues()
 
 /**
   * Отправить данные на передатчик
-  *
-  * @param массив с текущими значениями снятыми с пульта управления
   */
 void sendData() 
 {
