@@ -13,8 +13,8 @@ int LEFT_VERTICAL_SLIDER_PIN = 2; // левый потенциометр на 2 
 int RIGHT_VERTICAL_SLIDER_PIN = 1;  // правый потенциометр на 1 аналоговом пине, вперед-назад  (руль высоты)
 int RIGHT_HORIZONTAL_SLIDER_PIN = 8; // правый потенциометр на 8 аналоговом пине, вправо-влево  (элероны)
 
-int SERVO_MIN_ANGLE = 0;
-int SERVO_MAX_ANGLE = 180;
+int SERVO_MIN_ANGLE = 40;
+int SERVO_MAX_ANGLE = 140;
 
 int ENGINE_STOP = 800;
 int ENGINE_FULL_SPEED = 2200;
@@ -31,7 +31,7 @@ void setup()
   radio.openWritingPipe(address[0]);   // мы - труба 0, открываем канал для передачи данных
   radio.setChannel(0x60);  // выбираем канал (в котором нет шумов!)
 
-  radio.setPALevel(RF24_PA_MAX); // уровень мощности передатчика. На выбор RF24_PA_MIN, RF24_PA_LOW, RF24_PA_HIGH, RF24_PA_MAX
+  radio.setPALevel(RF24_PA_HIGH); // уровень мощности передатчика. На выбор RF24_PA_MIN, RF24_PA_LOW, RF24_PA_HIGH, RF24_PA_MAX
   radio.setDataRate(RF24_250KBPS); // скорость обмена. На выбор RF24_2MBPS, RF24_1MBPS, RF24_250KBPS
   // должна быть одинакова на приёмнике и передатчике!
   // при самой низкой скорости имеем самую высокую чувствительность и дальность!!
